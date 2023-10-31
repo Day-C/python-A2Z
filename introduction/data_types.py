@@ -56,3 +56,8 @@
               #Immutable: sets are immutable meaning they can not be modified after it is created
               s = {1, 2, 3, 4}
               print(s)   #output: 1, 2, 3, 4
+
+#distionaties (dict): Dictionaties are key-value pairs. we can create a dictionary using curly braces {}, and a key must be unuqie. we can retrive, update, and delet items.
+              #key-Value pair: in dictionaries each key is unique and maps to a specific value
+              dic = {"name":"Edd", "age":17, "profession":"SE"}:q
+

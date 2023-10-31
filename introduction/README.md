@@ -8,4 +8,5 @@ Note that most, if not all of the concepts apply to all of programmig languages.
 5. modules & packages
 6. syntax & indentation
 7. comments
-Note, each programming language may have its own way of implementing each of these.
+Note, each programming language may have its own way of implementing each of these
+
