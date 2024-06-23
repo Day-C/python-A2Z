@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''Shop class'''
-from sqlalchemy.declarative import declarative_base
-from sqlalchemy import Column, String, Ingeter, DateTime
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, String, Integer, DateTime
 from datetime import datetime
 import models
 import uuid
@@ -14,7 +14,7 @@ class BaseModel():
 
     id = Column(String(60), primary_key=True, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow(), nullable=False)
-    updated_at = Column(dateTime, default=datetime.utcnow(), nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow(), nullable=False)
 
     def __init__(self, *args, **kwargs):
         # Hadle creating a base model from a dictionary 

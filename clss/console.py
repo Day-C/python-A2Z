@@ -1,4 +1,4 @@
-#!/usr/bin/pythoin3
+#!/usr/bin/python3
 '''Console for models'''
 import cmd
 from models.base_model import BaseModel

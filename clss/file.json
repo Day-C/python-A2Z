@@ -1,1 +1,1 @@
-{"Place.c374ed03-9ff1-4f85-a542-ebd0fb24eda9": {"city id": "0001", "user id": "0001", "name": "My little house", "number rooms": 4, "number bathrooms": 2, "max guest": 10, "price by night": 300, "latitude": 37.773972, "longitude": -122.431297, "created_at": "2024-06-14 04:35:33.881875", "id": "c374ed03-9ff1-4f85-a542-ebd0fb24eda9", "updated_at": "2024-06-14 04:35:33.882428"}}
+{"User.e757bc02-66d5-4975-aa44-60e6f001439c": {"id": "e757bc02-66d5-4975-aa44-60e6f001439c", "created_at": "2024-06-22T23:45:39.119142", "updated_at": "2024-06-22 23:45:39.119177"}}

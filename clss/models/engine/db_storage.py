@@ -12,7 +12,7 @@ from models.base_model import Base
 from os import getenv
 
 
-classes = {"User": User, "Place": Place, "City": City, "State": State, "Amenity": Amenity, "Review" Review}
+classes = {"User": User, "Place": Place, "City": City, "State": State, "Amenity": Amenity, "Review": Review}
 
 
 class DBStorage():
@@ -29,11 +29,10 @@ class DBStorage():
         hst = 'localhost'
         dbs = getenv('HBNB_MYSQL_DB')
 
-        db_url = "mysql+mysqldb://{}:{}@{}/{}".format(usr, pwd, hst, dbs)
+        self.__engine = create_engine("mysql+mysqldb://{}:{}@{}/{}".format(usr, pwd, hst, dbs))
 
-        self.__engine = create_engine(db_url, pool_per_ping=True)
 
-        if HBNB_ENV == 'test':
+        if getenv('HBNB_ENV')== 'test':
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
@@ -43,7 +42,8 @@ class DBStorage():
         if cls != None and cls in classes:
            all_cls = self.__session.query(classes[cls]).all()
         else:
-            all_cls = self.__session.query.all()
+            for clss in classes:
+                all_cls = self.__session.query(classes[clss]).all()
         all_objs = {}
         for obj in all_cls:
             key = obj.__class__.__name__ + "." + obj.id
@@ -70,7 +70,7 @@ class DBStorage():
     def reload(self):
         '''Create all tables in the database.'''
 
-        Base.metadata.create_all(self.__session)
+        Base.metadata.create_all(self.__engine)
         session_factory = sessionmaker(bind=self.__engine, expire_on_commit=True)
         Session = scoped_session(session_factory)
         self.__session = Session
